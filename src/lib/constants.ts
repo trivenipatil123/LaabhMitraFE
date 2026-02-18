@@ -95,6 +95,14 @@ export const CALCULATOR_CARDS = [
         icon: '🏦',
         color: '#0891B2',
     },
+    {
+        slug: 'ppf',
+        title: 'PPF Calculator',
+        titleHi: 'PPF कैलकुलेटर',
+        description: 'Calculate Public Provident Fund returns with yearly breakdown.',
+        icon: '🏛️',
+        color: '#4F46E5',
+    },
 ];
 
 export const formatCurrency = (amount: number | null | undefined): string => {

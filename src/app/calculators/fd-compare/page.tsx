@@ -16,7 +16,7 @@ interface FDRate {
 }
 
 interface FDCompareResponse {
-    rates: FDRate[];
+    results: FDRate[];
     amount: number;
     tenure_months: number;
     is_senior: boolean;
@@ -82,7 +82,7 @@ export default function FDComparePage() {
                         <div key={i} className="skeleton h-16 rounded-xl" />
                     ))}
                 </div>
-            ) : data?.rates && data.rates.length > 0 ? (
+            ) : data?.results && data.results.length > 0 ? (
                 <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                         <thead>
@@ -94,7 +94,7 @@ export default function FDComparePage() {
                             </tr>
                         </thead>
                         <tbody>
-                            {data.rates.map((rate, i) => (
+                            {data.results.map((rate: FDRate, i: number) => (
                                 <tr key={`${rate.bank_name}-${i}`}
                                     className={`border-b border-[var(--color-border)] ${i === 0 ? 'bg-green-50' : ''}`}>
                                     <td className="py-3 px-4">
