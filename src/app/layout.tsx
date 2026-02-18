@@ -46,7 +46,15 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1,
+    },
   },
+  // verification: { google: 'YOUR_SEARCH_CONSOLE_CODE' },
   metadataBase: new URL("https://laabhmitra.in"),
 };
 

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { schemesApi } from '@/lib/api';
 import { formatCurrency } from '@/lib/constants';
 import { trackSchemeViewed } from '@/lib/analytics';
+import { SchemeJsonLd } from '@/components/SchemeJsonLd';
 
 interface HowToApplyStep {
     step: number;
@@ -78,6 +79,7 @@ export default function SchemeDetailPage() {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+            <SchemeJsonLd scheme={scheme} />
             {/* Breadcrumb */}
             <nav className="text-sm text-[var(--color-text-light)] mb-4">
                 <Link href="/schemes" className="hover:text-[var(--color-primary)] transition">Schemes</Link>

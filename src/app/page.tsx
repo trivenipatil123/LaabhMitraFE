@@ -1,5 +1,32 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { CALCULATOR_CARDS } from '@/lib/constants';
+import { WebsiteJsonLd } from '@/components/WebsiteJsonLd';
+
+export const metadata: Metadata = {
+  title: 'LaabhMitra — Check Your Government Scheme Eligibility for Free',
+  description:
+    'Find all government schemes you qualify for in 2 minutes. Free eligibility checker for PM Kisan, Ayushman Bharat, PM Awas Yojana & 20+ schemes. Includes income tax, EMI & SIP calculators.',
+  alternates: {
+    canonical: 'https://laabhmitra.in',
+  },
+  openGraph: {
+    title: 'LaabhMitra — Check Your Government Scheme Eligibility for Free',
+    description:
+      'Find all government schemes you qualify for in 2 minutes. Free eligibility checker + financial calculators.',
+    url: 'https://laabhmitra.in',
+    siteName: 'LaabhMitra',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: 'https://laabhmitra.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LaabhMitra — Government Scheme Eligibility Checker',
+    description: 'Check eligibility for 700+ schemes. Free calculators.',
+    images: ['https://laabhmitra.in/og-image.png'],
+  },
+};
 
 const HERO_STATS = [
   { value: '700+', label: 'Schemes', icon: '📋' },
@@ -45,6 +72,7 @@ const HOW_IT_WORKS = [
 export default function HomePage() {
   return (
     <div>
+      <WebsiteJsonLd />
       {/* ── Hero Section ─────────────────────────────── */}
       <section className="gradient-bg text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
