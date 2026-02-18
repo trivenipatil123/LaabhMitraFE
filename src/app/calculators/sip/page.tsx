@@ -1,13 +1,16 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { calculateSIP } from '@/lib/calculators';
 import { formatCurrency } from '@/lib/constants';
+import { trackCalculatorUsed } from '@/lib/analytics';
 
 export default function SIPCalculator() {
     const [monthly, setMonthly] = useState(10000);
     const [returnRate, setReturnRate] = useState(12);
     const [years, setYears] = useState(10);
+
+    useEffect(() => { trackCalculatorUsed('sip'); }, []);
 
     const result = useMemo(() => calculateSIP(monthly, returnRate, years), [monthly, returnRate, years]);
     const investedPercent = result.futureValue > 0 ? Math.round((result.totalInvested / result.futureValue) * 100) : 0;

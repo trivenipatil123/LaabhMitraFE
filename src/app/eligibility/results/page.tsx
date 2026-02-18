@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { eligibilityApi } from '@/lib/api';
 import { formatCurrency } from '@/lib/constants';
+import { trackEligibilityCheck } from '@/lib/analytics';
 
 // Matches the backend EligibilitySchemeMatch schema exactly
 interface SchemeMatch {
@@ -52,6 +53,7 @@ export default function ResultsPage() {
                 const profile = JSON.parse(stored);
                 const data = await eligibilityApi.check(profile) as EligibilityResult;
                 setResult(data);
+                trackEligibilityCheck(data.total_schemes);
             } catch (err) {
                 setError(err instanceof Error ? err.message : 'Failed to check eligibility');
             } finally {

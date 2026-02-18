@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { calculateGST } from '@/lib/calculators';
 import { formatCurrency } from '@/lib/constants';
+import { trackCalculatorUsed } from '@/lib/analytics';
 
 const GST_RATES = [5, 12, 18, 28];
 
@@ -10,6 +11,8 @@ export default function GSTCalculator() {
     const [amount, setAmount] = useState(10000);
     const [rate, setRate] = useState(18);
     const [type, setType] = useState<'exclusive' | 'inclusive'>('exclusive');
+
+    useEffect(() => { trackCalculatorUsed('gst'); }, []);
 
     const result = useMemo(() => calculateGST(amount, rate, type), [amount, rate, type]);
 

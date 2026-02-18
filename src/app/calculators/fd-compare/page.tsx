@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { calculatorsApi } from '@/lib/api';
 import { formatCurrency } from '@/lib/constants';
+import { trackCalculatorUsed } from '@/lib/analytics';
 
 interface FDRate {
     bank_name: string;
@@ -40,6 +41,8 @@ export default function FDComparePage() {
             .catch(() => { })
             .finally(() => setLoading(false));
     }, [amount, tenure, senior]);
+
+    useEffect(() => { trackCalculatorUsed('fd-compare'); }, []);
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">

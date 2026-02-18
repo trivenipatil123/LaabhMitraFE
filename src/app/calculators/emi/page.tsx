@@ -1,13 +1,16 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { calculateEMI } from '@/lib/calculators';
 import { formatCurrency } from '@/lib/constants';
+import { trackCalculatorUsed } from '@/lib/analytics';
 
 export default function EMICalculator() {
     const [principal, setPrincipal] = useState(2500000);
     const [rate, setRate] = useState(8.5);
     const [tenure, setTenure] = useState(20);
+
+    useEffect(() => { trackCalculatorUsed('emi'); }, []);
 
     const result = useMemo(() => calculateEMI(principal, rate, tenure), [principal, rate, tenure]);
     const interestPercent = principal > 0 ? Math.round((result.totalInterest / result.totalPayment) * 100) : 0;

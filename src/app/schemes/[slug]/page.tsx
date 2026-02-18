@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { schemesApi } from '@/lib/api';
 import { formatCurrency } from '@/lib/constants';
+import { trackSchemeViewed } from '@/lib/analytics';
 
 interface HowToApplyStep {
     step: number;
@@ -45,7 +46,11 @@ export default function SchemeDetailPage() {
 
     useEffect(() => {
         schemesApi.getBySlug(slug)
-            .then((data) => setScheme(data as SchemeDetail))
+            .then((data) => {
+                const scheme = data as SchemeDetail;
+                setScheme(scheme);
+                trackSchemeViewed(scheme.name, scheme.slug);
+            })
             .catch(() => { })
             .finally(() => setLoading(false));
     }, [slug]);

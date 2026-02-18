@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { formatCurrency } from '@/lib/constants';
+import { trackCalculatorUsed } from '@/lib/analytics';
 
 const PPF_RATE = 7.1; // Current PPF interest rate (FY 2025-26)
 const PPF_MIN_TENURE = 15;
@@ -51,6 +52,8 @@ export default function PPFCalculatorPage() {
     const [yearlyDeposit, setYearlyDeposit] = useState(50000);
     const [tenure, setTenure] = useState(15);
     const [showBreakdown, setShowBreakdown] = useState(false);
+
+    useEffect(() => { trackCalculatorUsed('ppf'); }, []);
 
     const result = useMemo(
         () => calculatePPF(yearlyDeposit, tenure, PPF_RATE),

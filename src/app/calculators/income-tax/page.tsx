@@ -1,14 +1,17 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { calculateIncomeTax } from '@/lib/calculators';
 import { formatCurrency } from '@/lib/constants';
+import { trackCalculatorUsed } from '@/lib/analytics';
 
 export default function IncomeTaxCalculator() {
     const [income, setIncome] = useState(800000);
     const [deductions80c, setDeductions80c] = useState(150000);
     const [hra, setHra] = useState(0);
     const [otherDeductions, setOtherDeductions] = useState(0);
+
+    useEffect(() => { trackCalculatorUsed('income-tax'); }, []);
 
     const result = useMemo(
         () => calculateIncomeTax(income, deductions80c, hra, otherDeductions),
@@ -82,8 +85,8 @@ export default function IncomeTaxCalculator() {
                 <div className="space-y-4">
                     {/* Recommendation */}
                     <div className={`p-5 rounded-2xl border-2 ${result.recommendation === 'new'
-                            ? 'border-green-300 bg-green-50'
-                            : 'border-blue-300 bg-blue-50'
+                        ? 'border-green-300 bg-green-50'
+                        : 'border-blue-300 bg-blue-50'
                         }`}>
                         <div className="flex items-center gap-2 mb-2">
                             <span className="text-2xl">🎯</span>
