@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getAllBlogSlugs } from '@/lib/blog-data';
+import { getAllHindiSchemeSlugs } from '@/lib/hindi-scheme-data';
 
 const BASE_URL = 'https://laabhmitra.in';
 
@@ -120,5 +121,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.7,
     }));
 
-    return [...staticPages, ...schemePages, ...calculatorPages, ...blogPages];
+    // Hindi scheme pages
+    const hindiPages: MetadataRoute.Sitemap = [
+        {
+            url: `${BASE_URL}/hi/schemes`,
+            lastModified: now,
+            changeFrequency: 'weekly' as const,
+            priority: 0.7,
+        },
+        ...getAllHindiSchemeSlugs().map((slug) => ({
+            url: `${BASE_URL}/hi/schemes/${slug}`,
+            lastModified: now,
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
+        })),
+    ];
+
+    return [...staticPages, ...schemePages, ...calculatorPages, ...blogPages, ...hindiPages];
 }

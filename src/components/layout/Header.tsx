@@ -35,6 +35,12 @@ export default function Header() {
                                 {link.label}
                             </Link>
                         ))}
+                        <Link
+                            href="/hi/schemes"
+                            className="ml-2 px-3 py-1.5 text-xs font-medium rounded-full border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:border-[var(--color-primary)] transition"
+                        >
+                            हिन्दी
+                        </Link>
                     </nav>
 
                     {/* Mobile hamburger */}
@@ -67,6 +73,14 @@ export default function Header() {
                                 <span className="font-medium">{link.label}</span>
                             </Link>
                         ))}
+                        <Link
+                            href="/hi/schemes"
+                            onClick={() => setMobileOpen(false)}
+                            className="flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/5 transition"
+                        >
+                            <span className="text-lg">🌐</span>
+                            <span className="font-medium">हिन्दी</span>
+                        </Link>
                     </nav>
                 )}
             </div>
