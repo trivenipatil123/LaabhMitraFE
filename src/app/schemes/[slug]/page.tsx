@@ -7,6 +7,7 @@ import { schemesApi } from '@/lib/api';
 import { formatCurrency } from '@/lib/constants';
 import { trackSchemeViewed } from '@/lib/analytics';
 import { SchemeJsonLd } from '@/components/SchemeJsonLd';
+import { SchemeVerificationBadge } from '@/components/SchemeVerificationBadge';
 
 interface HowToApplyStep {
     step: number;
@@ -86,6 +87,15 @@ export default function SchemeDetailPage() {
                 {' / '}
                 <span className="text-[var(--color-text)]">{scheme.name}</span>
             </nav>
+
+            {/* Verification Badge */}
+            <div className="mb-6">
+                <SchemeVerificationBadge
+                    lastVerified="2026-02-15"
+                    sourceUrl={scheme.official_url || 'https://myscheme.gov.in'}
+                    sourceName={scheme.ministry || 'myScheme.gov.in'}
+                />
+            </div>
 
             {/* Header */}
             <div className="mb-8 fade-in">

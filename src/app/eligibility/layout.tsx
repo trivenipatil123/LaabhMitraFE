@@ -9,7 +9,7 @@ export const metadata: Metadata = {
         title: 'Check Your Government Scheme Eligibility — LaabhMitra',
         description: 'Find all government schemes you qualify for in 2 minutes. Free eligibility checker.',
         url: 'https://laabhmitra.in/eligibility',
-        images: [{ url: 'https://laabhmitra.in/og-image.png', width: 1200, height: 630 }],
+        images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
     },
 };
 

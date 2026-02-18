@@ -9,7 +9,7 @@ export const metadata: Metadata = {
         title: 'Government Schemes in India 2026 — Complete List',
         description: 'Browse 700+ central and state government schemes. Filter by category.',
         url: 'https://laabhmitra.in/schemes',
-        images: [{ url: 'https://laabhmitra.in/og-image.png', width: 1200, height: 630 }],
+        images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
     },
 };
 

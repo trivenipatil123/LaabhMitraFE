@@ -9,7 +9,7 @@ export const metadata: Metadata = {
         title: 'LaabhMitra Blog — Schemes & Financial Guides',
         description: 'Latest updates on government schemes, tax-saving tips, and financial planning guides.',
         url: 'https://laabhmitra.in/blog',
-        images: [{ url: 'https://laabhmitra.in/og-image.png', width: 1200, height: 630 }],
+        images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
     },
 };
 

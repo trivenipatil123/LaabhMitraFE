@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     siteName: 'LaabhMitra',
     locale: 'en_IN',
     type: 'website',
-    images: [{ url: 'https://laabhmitra.in/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'LaabhMitra — Government Scheme Eligibility Checker',
     description: 'Check eligibility for 700+ schemes. Free calculators.',
-    images: ['https://laabhmitra.in/og-image.png'],
+    images: ['/opengraph-image'],
   },
 };
 

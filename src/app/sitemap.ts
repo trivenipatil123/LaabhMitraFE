@@ -70,6 +70,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'weekly',
             priority: 0.7,
         },
+        {
+            url: `${BASE_URL}/about`,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.5,
+        },
+        {
+            url: `${BASE_URL}/contact`,
+            lastModified: now,
+            changeFrequency: 'monthly',
+            priority: 0.5,
+        },
+        {
+            url: `${BASE_URL}/privacy-policy`,
+            lastModified: now,
+            changeFrequency: 'yearly',
+            priority: 0.3,
+        },
+        {
+            url: `${BASE_URL}/disclaimer`,
+            lastModified: now,
+            changeFrequency: 'yearly',
+            priority: 0.3,
+        },
     ];
 
     // Scheme detail pages

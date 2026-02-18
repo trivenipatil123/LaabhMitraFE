@@ -44,15 +44,16 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Legal */}
+                    {/* Legal & Info */}
                     <div>
                         <h4 className="font-semibold text-sm uppercase tracking-wider mb-3 text-[var(--color-text-light)]">
-                            Legal
+                            Company
                         </h4>
                         <ul className="space-y-2 text-sm">
-                            <li><span className="text-[var(--color-text-secondary)]">Privacy Policy</span></li>
-                            <li><span className="text-[var(--color-text-secondary)]">Terms of Use</span></li>
-                            <li><span className="text-[var(--color-text-secondary)]">Disclaimer</span></li>
+                            <li><Link href="/about" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition">About Us</Link></li>
+                            <li><Link href="/contact" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition">Contact</Link></li>
+                            <li><Link href="/privacy-policy" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition">Privacy Policy</Link></li>
+                            <li><Link href="/disclaimer" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition">Disclaimer</Link></li>
                         </ul>
                     </div>
                 </div>
