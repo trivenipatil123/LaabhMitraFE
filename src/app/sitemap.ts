@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { getAllBlogSlugs } from '@/lib/blog-data';
 
 const BASE_URL = 'https://laabhmitra.in';
 
@@ -111,6 +112,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly' as const,
         priority: 0.7,
     }));
+    // Blog post pages
+    const blogPages: MetadataRoute.Sitemap = getAllBlogSlugs().map((slug) => ({
+        url: `${BASE_URL}/blog/${slug}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }));
 
-    return [...staticPages, ...schemePages, ...calculatorPages];
+    return [...staticPages, ...schemePages, ...calculatorPages, ...blogPages];
 }
