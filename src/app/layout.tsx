@@ -55,6 +55,14 @@ export const metadata: Metadata = {
     },
   },
   // verification: { google: 'YOUR_SEARCH_CONSOLE_CODE' },
+  icons: {
+    icon: [
+      { url: '/favicon-monogram.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/favicon-monogram.svg', type: 'image/svg+xml' },
+    ],
+  },
   metadataBase: new URL("https://laabhmitra.in"),
 };
 
@@ -65,6 +73,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={notoSans.variable}>
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1496839440929585"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="min-h-screen flex flex-col">
         {GA_ID && (
           <>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <linearGradient id="grad2a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2b" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FB923C;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2c" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22C55E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16A34A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Left hand/leaf curve -->
+  <path d="M25 70 C25 45 35 30 50 25 C45 35 42 50 42 65" 
+        stroke="url(#grad2a)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  
+  <!-- Right hand/leaf curve -->
+  <path d="M75 70 C75 45 65 30 50 25 C55 35 58 50 58 65" 
+        stroke="url(#grad2c)" stroke-width="5" stroke-linecap="round" fill="none"/>
+  
+  <!-- Center circle (rupee/benefit symbol) -->
+  <circle cx="50" cy="55" r="18" fill="url(#grad2b)"/>
+  
+  <!-- Rupee symbol inside -->
+  <text x="50" y="62" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="white" text-anchor="middle">₹</text>
+  
+  <!-- Small sparkles -->
+  <circle cx="30" cy="35" r="2" fill="#3B82F6" opacity="0.6"/>
+  <circle cx="70" cy="35" r="2" fill="#22C55E" opacity="0.6"/>
+  <circle cx="50" cy="15" r="2.5" fill="#F97316" opacity="0.7"/>
+  
+  <!-- Checkmark dots at bottom -->
+  <circle cx="40" cy="82" r="3" fill="#22C55E"/>
+  <circle cx="50" cy="82" r="3" fill="#F97316"/>
+  <circle cx="60" cy="82" r="3" fill="#3B82F6"/>
+  
+  <!-- LaabhMitra Text -->
+  <text x="105" y="50" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="36" font-weight="800" fill="#1E293B" letter-spacing="-0.5">
+    <tspan fill="#1E40AF">Laabh</tspan><tspan fill="#F97316">Mitra</tspan>
+  </text>
+  
+  <!-- Hindi text -->
+  <text x="107" y="72" font-family="'Noto Sans Devanagari', 'Mangal', sans-serif" font-size="14" fill="#64748B" font-weight="500">
+    लाभमित्र — तुमचा लाभ मित्र
+  </text>
+  
+  <!-- Tri-color accent line (Indian flag inspired) -->
+  <rect x="107" y="80" width="25" height="2.5" rx="1.25" fill="#FF9933"/>
+  <rect x="135" y="80" width="25" height="2.5" rx="1.25" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="0.5"/>
+  <rect x="163" y="80" width="25" height="2.5" rx="1.25" fill="#138808"/>
+</svg>
