@@ -1,16 +1,36 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+
+const TOOL_LINKS = [
+    { href: '/deadlines', label: 'Deadline Tracker', icon: '⏰' },
+    { href: '/savings-dashboard', label: 'Savings Dashboard', icon: '📊' },
+    { href: '/compare-schemes', label: 'Compare Schemes', icon: '🔄' },
+    { href: '/retirement-score', label: 'Retirement Score', icon: '🎯' },
+];
+
 export default function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [toolsOpen, setToolsOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    // Close dropdown on outside click
+    useEffect(() => {
+        function handleClick(e: MouseEvent) {
+            if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+                setToolsOpen(false);
+            }
+        }
+        document.addEventListener('mousedown', handleClick);
+        return () => document.removeEventListener('mousedown', handleClick);
+    }, []);
 
     const navLinks = [
         { href: '/eligibility', label: 'Check Eligibility', icon: '✅' },
         { href: '/schemes', label: 'Schemes', icon: '📋' },
         { href: '/calculators', label: 'Calculators', icon: '🧮' },
-        { href: '/blog', label: 'Blog', icon: '📰' },
     ];
 
     return (
@@ -34,6 +54,48 @@ export default function Header() {
                                 {link.label}
                             </Link>
                         ))}
+
+                        {/* Tools Dropdown */}
+                        <div className="relative" ref={dropdownRef}>
+                            <button
+                                onClick={() => setToolsOpen(!toolsOpen)}
+                                className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${toolsOpen
+                                        ? 'text-[var(--color-primary)] bg-[var(--color-primary)]/5'
+                                        : 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/5'
+                                    }`}
+                            >
+                                <span className="text-base">🛠️</span>
+                                Tools
+                                <svg className={`w-3.5 h-3.5 transition-transform ${toolsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+
+                            {toolsOpen && (
+                                <div className="absolute right-0 mt-2 w-56 rounded-xl bg-white border border-[var(--color-border)] shadow-xl py-2 fade-in z-50">
+                                    {TOOL_LINKS.map((tool) => (
+                                        <Link
+                                            key={tool.href}
+                                            href={tool.href}
+                                            onClick={() => setToolsOpen(false)}
+                                            className="flex items-center gap-3 px-4 py-2.5 text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/5 transition"
+                                        >
+                                            <span className="text-base">{tool.icon}</span>
+                                            {tool.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+
+                        <Link
+                            href="/blog"
+                            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/5 transition-all duration-200"
+                        >
+                            <span className="text-base">📰</span>
+                            Blog
+                        </Link>
+
                         <Link
                             href="/hi/schemes"
                             className="ml-2 px-3 py-1.5 text-xs font-medium rounded-full border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:border-[var(--color-primary)] transition"
@@ -72,6 +134,31 @@ export default function Header() {
                                 <span className="font-medium">{link.label}</span>
                             </Link>
                         ))}
+
+                        {/* Tools section in mobile */}
+                        <div className="px-4 pt-2 pb-1">
+                            <span className="text-xs font-semibold text-[var(--color-text-light)] uppercase tracking-wider">Tools</span>
+                        </div>
+                        {TOOL_LINKS.map((tool) => (
+                            <Link
+                                key={tool.href}
+                                href={tool.href}
+                                onClick={() => setMobileOpen(false)}
+                                className="flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/5 transition"
+                            >
+                                <span className="text-lg">{tool.icon}</span>
+                                <span className="font-medium">{tool.label}</span>
+                            </Link>
+                        ))}
+
+                        <Link
+                            href="/blog"
+                            onClick={() => setMobileOpen(false)}
+                            className="flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/5 transition"
+                        >
+                            <span className="text-lg">📰</span>
+                            <span className="font-medium">Blog</span>
+                        </Link>
                         <Link
                             href="/hi/schemes"
                             onClick={() => setMobileOpen(false)}

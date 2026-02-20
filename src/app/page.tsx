@@ -122,6 +122,79 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Smart Tools ─────────────────────────────── */}
+      <section className="py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3">Smart Financial Tools</h2>
+            <p className="text-[var(--color-text-secondary)]">Beyond calculators — tools that actually change your financial life</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+            {[
+              {
+                href: '/deadlines',
+                icon: '⏰',
+                title: 'Deadline Tracker',
+                desc: 'Never miss ITR filing, PM Kisan eKYC, or tax-saving deadlines. Live countdown alerts.',
+                gradient: 'from-red-500 to-orange-500',
+              },
+              {
+                href: '/savings-dashboard',
+                icon: '📊',
+                title: 'Savings Dashboard',
+                desc: 'Track PF, PPF, FD, NPS, MF in one place. See net worth & projected retirement corpus.',
+                gradient: 'from-blue-500 to-indigo-500',
+              },
+              {
+                href: '/compare-schemes',
+                icon: '🔄',
+                title: 'Compare Schemes',
+                desc: 'PPF vs NPS vs ELSS? SIP vs Lumpsum? Side-by-side comparisons with verdict.',
+                gradient: 'from-purple-500 to-pink-500',
+              },
+              {
+                href: '/retirement-score',
+                icon: '🎯',
+                title: 'Retirement Score',
+                desc: 'Get your retirement readiness score (0-100). Personalized recommendations.',
+                gradient: 'from-green-500 to-teal-500',
+              },
+              {
+                href: '/schemes?tab=state',
+                icon: '🗺️',
+                title: 'State Schemes',
+                desc: 'Maharashtra, UP, Karnataka, TN, Bihar — discover state-level yojanas & benefits.',
+                gradient: 'from-amber-500 to-red-500',
+              },
+              {
+                href: '/calculators',
+                icon: '🧮',
+                title: '18+ Calculators',
+                desc: 'Income Tax, EMI, SIP, PPF, EPF, TDS, NPS, SSY, Lumpsum — instant results.',
+                gradient: 'from-cyan-500 to-blue-500',
+              },
+            ].map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group relative p-5 rounded-2xl bg-[var(--color-bg-card)] border border-[var(--color-border)] shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${tool.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${tool.gradient} flex items-center justify-center text-white text-xl mb-3 group-hover:scale-110 transition-transform`}>
+                  {tool.icon}
+                </div>
+                <h3 className="font-semibold text-base mb-1 group-hover:text-[var(--color-primary)] transition">{tool.title}</h3>
+                <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">{tool.desc}</p>
+                <span className="mt-3 text-xs font-medium text-[var(--color-primary)] flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  Explore <span>→</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── How It Works ─────────────────────────────── */}
       <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -201,7 +274,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Trust / CTA ──────────────────────────────── */}
+
       <section className="py-16 sm:py-20 bg-[var(--color-bg-card)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">
