@@ -35,6 +35,18 @@ const CALCULATOR_SLUGS = [
     'gst',
     'fd-compare',
     'ppf',
+    'home-loan-emi',
+    'hra',
+    'gratuity',
+    'nps',
+    'salary',
+    'rd',
+    'home-loan-eligibility',
+    'car-loan-emi',
+    'ssy',
+    'epf',
+    'tds',
+    'lumpsum',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
