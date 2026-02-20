@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { formatCurrency } from '@/lib/constants';
 import { trackCalculatorUsed } from '@/lib/analytics';
+import CalculatorBackLink from '@/components/CalculatorBackLink';
 
 const PPF_RATE = 7.1; // Current PPF interest rate (FY 2025-26)
 const PPF_MIN_TENURE = 15;
@@ -65,6 +66,7 @@ export default function PPFCalculatorPage() {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+            <CalculatorBackLink />
             <div className="text-center mb-8">
                 <h1 className="text-2xl sm:text-3xl font-bold mb-2">🏦 PPF Calculator</h1>
                 <p className="text-[var(--color-text-secondary)]">

@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { calculateHomeLoanEligibility } from '@/lib/calculators';
 import { formatCurrency } from '@/lib/constants';
 import { trackCalculatorUsed } from '@/lib/analytics';
+import CalculatorBackLink from '@/components/CalculatorBackLink';
 
 export default function HomeLoanEligibilityCalculator() {
     const [income, setIncome] = useState(80000);
@@ -17,6 +18,7 @@ export default function HomeLoanEligibilityCalculator() {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+            <CalculatorBackLink />
             <div className="text-center mb-8">
                 <h1 className="text-2xl sm:text-3xl font-bold mb-2">🔑 Home Loan Eligibility</h1>
                 <p className="text-[var(--color-text-secondary)]">Find out the maximum home loan amount you can qualify for</p>

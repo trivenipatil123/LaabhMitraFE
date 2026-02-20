@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { calculateCarLoanEMI } from '@/lib/calculators';
 import { formatCurrency } from '@/lib/constants';
 import { trackCalculatorUsed } from '@/lib/analytics';
+import CalculatorBackLink from '@/components/CalculatorBackLink';
 
 export default function CarLoanEMICalculator() {
     const [carPrice, setCarPrice] = useState(1000000);
@@ -18,6 +19,7 @@ export default function CarLoanEMICalculator() {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+            <CalculatorBackLink />
             <div className="text-center mb-8">
                 <h1 className="text-2xl sm:text-3xl font-bold mb-2">🚗 Car Loan EMI Calculator</h1>
                 <p className="text-[var(--color-text-secondary)]">Calculate your car loan EMI with down payment and total interest</p>

@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { calculatorsApi } from '@/lib/api';
 import { formatCurrency } from '@/lib/constants';
 import { trackCalculatorUsed } from '@/lib/analytics';
+import CalculatorBackLink from '@/components/CalculatorBackLink';
 
 interface FDRate {
     bank_name: string;
@@ -59,6 +60,7 @@ export default function FDComparePage() {
 
     return (
         <div className="max-w-5xl mx-auto px-4 py-8 sm:py-12">
+            <CalculatorBackLink />
             <div className="text-center mb-8">
                 <h1 className="text-2xl sm:text-3xl font-bold mb-2">🏦 FD Rate Comparison</h1>
                 <p className="text-[var(--color-text-secondary)]">Compare fixed deposit rates across major banks — find the best returns</p>

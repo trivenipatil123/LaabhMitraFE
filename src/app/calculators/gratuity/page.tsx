@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { calculateGratuity } from '@/lib/calculators';
 import { formatCurrency } from '@/lib/constants';
 import { trackCalculatorUsed } from '@/lib/analytics';
+import CalculatorBackLink from '@/components/CalculatorBackLink';
 
 export default function GratuityCalculator() {
     const [basicDA, setBasicDA] = useState(60000);
@@ -16,6 +17,7 @@ export default function GratuityCalculator() {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+            <CalculatorBackLink />
             <div className="text-center mb-8">
                 <h1 className="text-2xl sm:text-3xl font-bold mb-2">🎁 Gratuity Calculator</h1>
                 <p className="text-[var(--color-text-secondary)]">Calculate your gratuity amount and tax-free portion</p>

@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { calculateTDS } from '@/lib/calculators';
 import { formatCurrency } from '@/lib/constants';
 import { trackCalculatorUsed } from '@/lib/analytics';
+import CalculatorBackLink from '@/components/CalculatorBackLink';
 
 const INCOME_TYPES = [
     { key: 'salary', label: '💼 Salary', desc: 'Sec 192' },
@@ -27,6 +28,7 @@ export default function TDSCalculator() {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+            <CalculatorBackLink />
             <div className="text-center mb-8">
                 <h1 className="text-2xl sm:text-3xl font-bold mb-2">📋 TDS Calculator</h1>
                 <p className="text-[var(--color-text-secondary)]">Calculate Tax Deducted at Source on various income types</p>

@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { calculateHomeLoanEMI } from '@/lib/calculators';
 import { formatCurrency } from '@/lib/constants';
 import { trackCalculatorUsed } from '@/lib/analytics';
+import CalculatorBackLink from '@/components/CalculatorBackLink';
 
 export default function HomeLoanEMICalculator() {
     const [principal, setPrincipal] = useState(5000000);
@@ -18,6 +19,7 @@ export default function HomeLoanEMICalculator() {
 
     return (
         <div className="max-w-5xl mx-auto px-4 py-8 sm:py-12">
+            <CalculatorBackLink />
             <div className="text-center mb-8">
                 <h1 className="text-2xl sm:text-3xl font-bold mb-2">🏡 Home Loan EMI Calculator</h1>
                 <p className="text-[var(--color-text-secondary)]">Calculate your monthly EMI with detailed year-wise amortization schedule</p>

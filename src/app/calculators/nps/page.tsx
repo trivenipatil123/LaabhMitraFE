@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { calculateNPS } from '@/lib/calculators';
 import { formatCurrency } from '@/lib/constants';
 import { trackCalculatorUsed } from '@/lib/analytics';
+import CalculatorBackLink from '@/components/CalculatorBackLink';
 
 export default function NPSCalculator() {
     const [monthly, setMonthly] = useState(5000);
@@ -22,6 +23,7 @@ export default function NPSCalculator() {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+            <CalculatorBackLink />
             <div className="text-center mb-8">
                 <h1 className="text-2xl sm:text-3xl font-bold mb-2">🏦 NPS Calculator</h1>
                 <p className="text-[var(--color-text-secondary)]">Plan your retirement — see your corpus & monthly pension at 60</p>

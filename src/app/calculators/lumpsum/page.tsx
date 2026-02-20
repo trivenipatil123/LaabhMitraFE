@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { calculateLumpsum } from '@/lib/calculators';
 import { formatCurrency } from '@/lib/constants';
 import { trackCalculatorUsed } from '@/lib/analytics';
+import CalculatorBackLink from '@/components/CalculatorBackLink';
 
 export default function LumpsumCalculator() {
     const [investment, setInvestment] = useState(500000);
@@ -18,6 +19,7 @@ export default function LumpsumCalculator() {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+            <CalculatorBackLink />
             <div className="text-center mb-8">
                 <h1 className="text-2xl sm:text-3xl font-bold mb-2">💎 Lumpsum Investment Calculator</h1>
                 <p className="text-[var(--color-text-secondary)]">See how your one-time investment grows with compound interest</p>

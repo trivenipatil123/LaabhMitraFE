@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { calculateIncomeTax } from '@/lib/calculators';
 import { formatCurrency } from '@/lib/constants';
 import { trackCalculatorUsed } from '@/lib/analytics';
+import CalculatorBackLink from '@/components/CalculatorBackLink';
 
 export default function IncomeTaxCalculator() {
     const [income, setIncome] = useState(800000);
@@ -22,6 +23,7 @@ export default function IncomeTaxCalculator() {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+            <CalculatorBackLink />
             <div className="text-center mb-8">
                 <h1 className="text-2xl sm:text-3xl font-bold mb-2">💰 Income Tax Calculator</h1>
                 <p className="text-[var(--color-text-secondary)]">Compare Old vs New Tax Regime — FY 2025-26</p>
