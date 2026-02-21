@@ -7,8 +7,7 @@ import { schemesApi } from '@/lib/api';
 import { formatCurrency } from '@/lib/constants';
 import { trackSchemeViewed } from '@/lib/analytics';
 import { SchemeJsonLd } from '@/components/SchemeJsonLd';
-import { SchemeVerificationBadge } from '@/components/SchemeVerificationBadge';
-import { SCHEME_CHECKLISTS } from '@/lib/scheme-checklists';
+
 
 interface HowToApplyStep {
     step: number;
@@ -89,13 +88,14 @@ export default function SchemeDetailPage() {
                 <span className="text-[var(--color-text)]">{scheme.name}</span>
             </nav>
 
-            {/* Verification Badge */}
-            <div className="mb-6">
-                <SchemeVerificationBadge
-                    lastVerified="2026-02-15"
-                    sourceUrl={scheme.official_url || 'https://myscheme.gov.in'}
-                    sourceName={scheme.ministry || 'myScheme.gov.in'}
-                />
+            {/* Language switcher */}
+            <div className="flex justify-end mb-4">
+                <Link
+                    href={`/hi/schemes/${slug}`}
+                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition"
+                >
+                    🌐 हिंदी
+                </Link>
             </div>
 
             {/* Header */}
@@ -140,108 +140,37 @@ export default function SchemeDetailPage() {
                         <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">{scheme.description}</p>
                     </div>
 
-                    {/* Enhanced Document Checklist */}
-                    {(() => {
-                        const checklist = SCHEME_CHECKLISTS[scheme.slug];
-                        if (checklist) {
-                            return (
-                                <div className="p-5 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)]">
-                                    <h3 className="font-semibold mb-3 flex items-center gap-2"><span>📋</span> Document Checklist</h3>
-                                    <div className="space-y-2">
-                                        {checklist.documents.map((doc, i) => (
-                                            <label key={i} className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition cursor-pointer">
-                                                <input type="checkbox" className="mt-1 w-4 h-4 rounded border-gray-300 text-[var(--color-primary)] focus:ring-[var(--color-primary)]" />
-                                                <div className="flex-1">
-                                                    <span className="text-sm font-medium">{doc.name}</span>
-                                                    <div className="flex items-center gap-2 mt-0.5">
-                                                        <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${doc.required ? 'bg-red-100 text-red-600' : 'bg-gray-100 text-gray-500'}`}>
-                                                            {doc.required ? 'REQUIRED' : 'OPTIONAL'}
-                                                        </span>
-                                                        {doc.note && <span className="text-[10px] text-[var(--color-text-light)]">{doc.note}</span>}
-                                                    </div>
-                                                </div>
-                                            </label>
-                                        ))}
-                                    </div>
-                                    {checklist.whereToApply && (
-                                        <div className="mt-3 p-3 rounded-lg bg-blue-50 border border-blue-200 text-xs text-blue-800">
-                                            <strong>📍 Where to Apply:</strong> {checklist.whereToApply}
-                                        </div>
-                                    )}
-                                    {checklist.helpline && (
-                                        <p className="mt-2 text-xs text-[var(--color-text-light)]">📞 Helpline: <strong>{checklist.helpline}</strong></p>
-                                    )}
-                                </div>
-                            );
-                        }
-                        // Fallback to API data
-                        if (scheme.documents_required?.length > 0) {
-                            return (
-                                <div className="p-5 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)]">
-                                    <h3 className="font-semibold mb-3 flex items-center gap-2"><span>📄</span> Documents Required</h3>
-                                    <ul className="space-y-2">
-                                        {scheme.documents_required.map((doc, i) => (
-                                            <li key={i} className="flex items-start gap-2 text-sm text-[var(--color-text-secondary)]">
-                                                <span className="text-[var(--color-primary)] mt-0.5">✓</span>
-                                                {doc}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            );
-                        }
-                        return null;
-                    })()}
+                    {/* Documents Required */}
+                    {scheme.documents_required && scheme.documents_required.length > 0 && (
+                        <div className="p-5 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)]">
+                            <h3 className="font-semibold mb-3 flex items-center gap-2"><span>📄</span> Documents Required</h3>
+                            <ul className="space-y-2">
+                                {scheme.documents_required.map((doc: string, i: number) => (
+                                    <li key={i} className="flex items-start gap-2 text-sm text-[var(--color-text-secondary)]">
+                                        <span className="text-[var(--color-primary)] mt-0.5">•</span>
+                                        {doc}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
 
-                    {/* Enhanced How to Apply */}
-                    {(() => {
-                        const checklist = SCHEME_CHECKLISTS[scheme.slug];
-                        if (checklist) {
-                            return (
-                                <div className="p-5 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)]">
-                                    <h3 className="font-semibold mb-3 flex items-center gap-2"><span>📝</span> Step-by-Step Application</h3>
-                                    <ol className="space-y-3">
-                                        {checklist.applicationSteps.map((step) => (
-                                            <li key={step.step} className="flex items-start gap-3">
-                                                <span className="w-7 h-7 shrink-0 rounded-full gradient-bg text-white text-xs font-bold flex items-center justify-center">
-                                                    {step.step}
-                                                </span>
-                                                <div className="pt-0.5">
-                                                    <span className="text-sm font-medium">{step.title}</span>
-                                                    <p className="text-xs text-[var(--color-text-secondary)] mt-0.5">{step.description}</p>
-                                                </div>
-                                            </li>
-                                        ))}
-                                    </ol>
-                                    {checklist.applyUrl && (
-                                        <a href={checklist.applyUrl} target="_blank" rel="noopener noreferrer"
-                                            className="mt-4 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg gradient-bg text-white text-sm font-medium hover:opacity-90 transition">
-                                            🌐 Apply on Official Portal →
-                                        </a>
-                                    )}
-                                </div>
-                            );
-                        }
-                        // Fallback to API data
-                        if (scheme.how_to_apply?.length > 0) {
-                            return (
-                                <div className="p-5 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)]">
-                                    <h3 className="font-semibold mb-3 flex items-center gap-2"><span>📝</span> How to Apply</h3>
-                                    <ol className="space-y-3">
-                                        {scheme.how_to_apply.map((step) => (
-                                            <li key={step.step} className="flex items-start gap-3">
-                                                <span className="w-7 h-7 shrink-0 rounded-full gradient-bg text-white text-xs font-bold flex items-center justify-center">
-                                                    {step.step}
-                                                </span>
-                                                <span className="text-sm text-[var(--color-text-secondary)] pt-0.5">{step.text}</span>
-                                            </li>
-                                        ))}
-                                    </ol>
-                                </div>
-                            );
-                        }
-                        return null;
-                    })()}
+                    {/* How to Apply */}
+                    {scheme.how_to_apply && scheme.how_to_apply.length > 0 && (
+                        <div className="p-5 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)]">
+                            <h3 className="font-semibold mb-3 flex items-center gap-2"><span>📝</span> How to Apply</h3>
+                            <ol className="space-y-3">
+                                {scheme.how_to_apply.map((step: { step: number; text: string }) => (
+                                    <li key={step.step} className="flex items-start gap-3">
+                                        <span className="w-7 h-7 shrink-0 rounded-full gradient-bg text-white text-xs font-bold flex items-center justify-center">
+                                            {step.step}
+                                        </span>
+                                        <span className="text-sm text-[var(--color-text-secondary)] pt-0.5">{step.text}</span>
+                                    </li>
+                                ))}
+                            </ol>
+                        </div>
+                    )}
                 </div>
 
                 {/* Sidebar */}

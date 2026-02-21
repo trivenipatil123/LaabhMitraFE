@@ -30,26 +30,44 @@ export default function OGImage() {
                     }}
                 />
 
-                {/* Logo */}
+                {/* Logo — recreated from SVG */}
                 <div
                     style={{
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '12px',
+                        gap: '16px',
                         marginBottom: '24px',
                     }}
                 >
-                    <span style={{ fontSize: '56px' }}>🏛️</span>
-                    <span
+                    {/* Rupee circle icon */}
+                    <div
                         style={{
-                            fontSize: '48px',
-                            fontWeight: 700,
-                            color: '#ffffff',
-                            letterSpacing: '-1px',
+                            width: '64px',
+                            height: '64px',
+                            borderRadius: '50%',
+                            background: 'linear-gradient(135deg, #F97316, #FB923C)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
                         }}
                     >
-                        LaabhMitra
-                    </span>
+                        <span style={{ fontSize: '34px', fontWeight: 700, color: '#fff' }}>₹</span>
+                    </div>
+
+                    {/* LaabhMitra text with brand colors */}
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ display: 'flex', alignItems: 'baseline' }}>
+                            <span style={{ fontSize: '52px', fontWeight: 800, color: '#DBEAFE', letterSpacing: '-1px' }}>Laabh</span>
+                            <span style={{ fontSize: '52px', fontWeight: 800, color: '#FED7AA', letterSpacing: '-1px' }}>Mitra</span>
+                        </div>
+                        {/* Tricolor accent */}
+                        <div style={{ display: 'flex', gap: '3px', marginTop: '2px' }}>
+                            <div style={{ width: '30px', height: '3px', borderRadius: '2px', background: '#FF9933' }} />
+                            <div style={{ width: '30px', height: '3px', borderRadius: '2px', background: '#FFFFFF' }} />
+                            <div style={{ width: '30px', height: '3px', borderRadius: '2px', background: '#138808' }} />
+                        </div>
+                    </div>
                 </div>
 
                 {/* Tagline */}
