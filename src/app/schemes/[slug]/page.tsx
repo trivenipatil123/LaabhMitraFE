@@ -228,6 +228,73 @@ export default function SchemeDetailPage() {
                     </Link>
                 </div>
             </div>
+
+            {/* Auto-generated FAQ Section for SEO */}
+            {(() => {
+                const faqs = [
+                    {
+                        q: `What is ${scheme.name}?`,
+                        a: scheme.description || `${scheme.name} is a ${scheme.scope || 'Central'} government scheme under the ${scheme.ministry || 'Government of India'}.`,
+                    },
+                    {
+                        q: `What are the benefits of ${scheme.name}?`,
+                        a: scheme.benefit_summary + (scheme.benefit_value > 0 ? ` Worth up to ${formatCurrency(scheme.benefit_value)}.` : ''),
+                    },
+                    ...(scheme.documents_required?.length > 0
+                        ? [{
+                            q: `What documents are required for ${scheme.name}?`,
+                            a: `The documents required include: ${scheme.documents_required.join(', ')}.`,
+                        }]
+                        : []),
+                    ...(scheme.helpline
+                        ? [{
+                            q: `What is the helpline number for ${scheme.name}?`,
+                            a: `You can reach the ${scheme.name} helpline at ${scheme.helpline}.`,
+                        }]
+                        : []),
+                    {
+                        q: `How do I check my eligibility for ${scheme.name}?`,
+                        a: `You can check your eligibility for ${scheme.name} instantly on LaabhMitra — visit laabhmitra.in/eligibility. It takes just 2 minutes and requires no login.`,
+                    },
+                ];
+
+                return (
+                    <>
+                        <section className="mt-8 p-5 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)]">
+                            <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                                <span>❓</span> Frequently Asked Questions
+                            </h2>
+                            <div className="space-y-4">
+                                {faqs.map((faq, i) => (
+                                    <div key={i} className={i > 0 ? 'pt-4 border-t border-[var(--color-border)]' : ''}>
+                                        <h3 className="font-medium text-[var(--color-text-primary)] mb-1">{faq.q}</h3>
+                                        <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">{faq.a}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* FAQ JSON-LD for Google Rich Results */}
+                        <script
+                            type="application/ld+json"
+                            dangerouslySetInnerHTML={{
+                                __html: JSON.stringify({
+                                    '@context': 'https://schema.org',
+                                    '@type': 'FAQPage',
+                                    mainEntity: faqs.map((faq) => ({
+                                        '@type': 'Question',
+                                        name: faq.q,
+                                        acceptedAnswer: {
+                                            '@type': 'Answer',
+                                            text: faq.a,
+                                        },
+                                    })),
+                                }),
+                            }}
+                        />
+                    </>
+                );
+            })()}
         </div>
     );
 }

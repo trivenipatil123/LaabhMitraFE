@@ -27,10 +27,10 @@ export const BLOG_POSTS: BlogPost[] = [
     // ── Post 1: PM Kisan 2026 ──────────────────────────
     {
         slug: 'pm-kisan-2026-eligibility-status-check',
-        title: 'PM Kisan 2026: Eligibility, Status Check & 22nd Installment Date',
-        metaTitle: 'PM Kisan 2026: Eligibility, Status Check & 22nd Installment Date',
+        title: 'PM Kisan Eligibility Check 2026 — Who Is Eligible, Status Check & 22nd Installment',
+        metaTitle: 'PM Kisan Eligibility Check Online 2026 — Who Is Eligible & Installment Date',
         metaDescription:
-            'Complete guide to PM Kisan Samman Nidhi 2026 — check eligibility, beneficiary status, 22nd installment date, and how to apply. Free eligibility check on LaabhMitra.',
+            'Check PM Kisan eligibility online 2026. Who is eligible, who is not — complete criteria list. Check beneficiary status, 22nd installment date & how to apply. Free checker on LaabhMitra.',
         excerpt:
             'Complete guide to PM Kisan Samman Nidhi Yojana 2026 — eligibility criteria, payment status, installment dates, and step-by-step application guide.',
         publishedAt: '2026-02-18',
@@ -276,10 +276,10 @@ export const BLOG_POSTS: BlogPost[] = [
     // ── Post 3: Ayushman Bharat ──────────────────────────
     {
         slug: 'ayushman-bharat-card-apply-eligibility-hospital-list',
-        title: 'Ayushman Bharat Card: How to Apply, Check Eligibility & Hospital List',
-        metaTitle: 'Ayushman Bharat Card 2026: Apply Online, Eligibility & Hospital List',
+        title: 'Ayushman Bharat Eligibility Check by Name 2026 — Apply, Card & Hospital List',
+        metaTitle: 'Ayushman Bharat Eligibility Check by Name 2026 — How to Apply & Hospital List',
         metaDescription:
-            'How to apply for Ayushman Bharat card online, check eligibility, download ABHA card, and find empanelled hospitals. Complete guide with step-by-step instructions.',
+            'Check Ayushman Bharat eligibility by name online 2026. How to apply for PMJAY card, download ABHA card, find empanelled hospitals near you. Free eligibility check on LaabhMitra.',
         excerpt:
             'Complete guide to Ayushman Bharat PMJAY — free ₹5 lakh health insurance. Learn how to apply, check eligibility, and find hospitals near you.',
         publishedAt: '2026-02-18',
@@ -654,6 +654,249 @@ export const BLOG_POSTS: BlogPost[] = [
             {
                 question: 'Can I break an FD before maturity?',
                 answer: 'Regular bank FDs can be broken prematurely, but the bank charges a penalty of 0.5-1% on the applicable rate. Tax-saving 5-year FDs cannot be broken before maturity.',
+            },
+        ],
+    },
+
+    // ── Post 6: HRA Exemption Calculator Guide ──────────────
+    {
+        slug: 'hra-exemption-calculator-guide-2026',
+        title: 'HRA Exemption Calculator 2026 — How to Calculate Tax Savings on Rent',
+        metaTitle: 'HRA Exemption Calculator 2026 — Calculate HRA Tax Savings (Formula + Examples)',
+        metaDescription:
+            'Calculate HRA exemption for FY 2025-26 with formula, examples, and free calculator. Learn how much tax you save on rent in metro vs non-metro cities. Step-by-step HRA calculation guide.',
+        excerpt:
+            'Learn exactly how HRA exemption is calculated with real examples. Use our free calculator to find your tax savings on rent — metro vs non-metro, old regime vs new.',
+        publishedAt: '2026-02-23',
+        updatedAt: '2026-02-23',
+        author: 'LaabhMitra Team',
+        tags: ['HRA', 'Tax Planning', 'Income Tax', 'Financial Tools'],
+        readTime: '7 min read',
+        sections: [
+            {
+                heading: 'What is HRA Exemption and Why Does It Matter?',
+                content: `<p>House Rent Allowance (HRA) is a component of your salary that your employer pays to cover rental expenses. If you live in a rented house, <strong>a portion of your HRA is exempt from income tax</strong> under Section 10(13A) of the Income Tax Act.</p>
+<p>For many salaried individuals, HRA exemption is the <strong>single largest tax-saving tool</strong> — it can reduce your taxable income by ₹1-3 lakh per year depending on your rent and salary.</p>
+<p><strong>Important:</strong> HRA exemption is available <strong>only under the old tax regime</strong>. If you've chosen the new regime, you cannot claim HRA. Not sure which regime suits you? <a href="/calculators/income-tax">Compare both regimes with our calculator</a>.</p>`,
+            },
+            {
+                heading: 'HRA Exemption Formula — How It Is Calculated',
+                content: `<p>The HRA exemption is the <strong>minimum of these three amounts</strong>:</p>
+<ol>
+<li><strong>Actual HRA received</strong> from your employer</li>
+<li><strong>50% of Basic Salary</strong> (if you live in a metro city — Mumbai, Delhi, Chennai, Kolkata) or <strong>40% of Basic Salary</strong> (non-metro cities)</li>
+<li><strong>Actual rent paid minus 10% of Basic Salary</strong></li>
+</ol>
+<p>The minimum of these three values is your tax-exempt HRA. The rest is added to your taxable income.</p>
+<h3>Example Calculation (Metro City)</h3>
+<p>Let's say you work in Mumbai with these numbers:</p>
+<table>
+<thead><tr><th>Component</th><th>Amount</th></tr></thead>
+<tbody>
+<tr><td>Basic Salary (annual)</td><td>₹6,00,000</td></tr>
+<tr><td>HRA Received (annual)</td><td>₹3,00,000</td></tr>
+<tr><td>Rent Paid (annual)</td><td>₹2,40,000 (₹20,000/month)</td></tr>
+</tbody>
+</table>
+<p><strong>Calculation:</strong></p>
+<ol>
+<li>Actual HRA received = ₹3,00,000</li>
+<li>50% of Basic (metro) = ₹3,00,000</li>
+<li>Rent paid − 10% of Basic = ₹2,40,000 − ₹60,000 = <strong>₹1,80,000</strong></li>
+</ol>
+<p>HRA exemption = Minimum of (₹3,00,000, ₹3,00,000, ₹1,80,000) = <strong>₹1,80,000</strong></p>
+<p>This means ₹1,80,000 of your HRA is tax-free, and the remaining ₹1,20,000 is taxable.</p>`,
+            },
+            {
+                heading: 'Metro vs Non-Metro — How It Affects Your HRA',
+                content: `<p>The city you live in makes a significant difference in your HRA exemption:</p>
+<table>
+<thead><tr><th>Factor</th><th>Metro Cities</th><th>Non-Metro Cities</th></tr></thead>
+<tbody>
+<tr><td>% of Basic Salary</td><td><strong>50%</strong></td><td><strong>40%</strong></td></tr>
+<tr><td>Cities covered</td><td>Mumbai, Delhi, Chennai, Kolkata</td><td>All other cities</td></tr>
+</tbody>
+</table>
+<h3>Example: Same salary, different cities</h3>
+<p>With Basic = ₹6 lakh, HRA = ₹3 lakh, Rent = ₹20,000/month:</p>
+<ul>
+<li><strong>Mumbai (Metro):</strong> Exemption = ₹1,80,000 → <strong>Tax saved ≈ ₹54,000</strong> (at 30% slab)</li>
+<li><strong>Pune (Non-Metro):</strong> Exemption = ₹1,80,000 → Same in this case because Rule 3 (Rent − 10% Basic) is the limiting factor</li>
+</ul>
+<p>The metro advantage kicks in when your rent is high enough that the 50% vs 40% rule becomes the limiting factor.</p>`,
+            },
+            {
+                heading: 'HRA Tax Savings — How Much Can You Actually Save?',
+                content: `<p>Here's a realistic table of tax savings from HRA at different salary and rent levels:</p>
+<table>
+<thead><tr><th>Basic Salary</th><th>Monthly Rent</th><th>City</th><th>Annual HRA Exemption</th><th>Tax Saved (30% slab)</th></tr></thead>
+<tbody>
+<tr><td>₹4,00,000</td><td>₹12,000</td><td>Non-Metro</td><td>₹1,04,000</td><td>₹31,200</td></tr>
+<tr><td>₹6,00,000</td><td>₹20,000</td><td>Metro</td><td>₹1,80,000</td><td>₹54,000</td></tr>
+<tr><td>₹8,00,000</td><td>₹25,000</td><td>Metro</td><td>₹2,20,000</td><td>₹66,000</td></tr>
+<tr><td>₹10,00,000</td><td>₹30,000</td><td>Non-Metro</td><td>₹2,60,000</td><td>₹78,000</td></tr>
+</tbody>
+</table>
+<p>That's up to <strong>₹78,000 saved per year</strong> just from HRA — and this is on top of your 80C, 80D, and other deductions.</p>
+<p>Use our <a href="/calculators/income-tax">Income Tax Calculator</a> to see your exact savings with HRA included.</p>`,
+            },
+            {
+                heading: 'Common Mistakes to Avoid with HRA Claims',
+                content: `<ul>
+<li><strong>Paying rent to parents?</strong> You CAN claim HRA if you pay rent to your parents — but they must declare it as rental income. Keep rent receipts and a rental agreement.</li>
+<li><strong>Owning a house and claiming HRA:</strong> You can claim HRA even if you own a house in a different city. But you cannot claim HRA if you live in your own house in the same city.</li>
+<li><strong>Rent above ₹1 lakh/month:</strong> If your annual rent exceeds ₹1 lakh, you must provide your landlord's PAN number to claim the exemption.</li>
+<li><strong>No rent receipts:</strong> Always keep rent receipts. For rent above ₹5,000/month, receipts with revenue stamps are required for HRA claims.</li>
+<li><strong>Choosing new regime:</strong> HRA exemption is NOT available under the new tax regime. If your HRA savings are significant, the old regime may save you more overall. <a href="/blog/income-tax-calculator-2025-26-old-vs-new-regime">Read our old vs new regime comparison</a>.</li>
+</ul>`,
+            },
+            {
+                heading: 'Documents Required for HRA Exemption',
+                content: `<p>Keep these documents ready for your employer and for filing ITR:</p>
+<ul>
+<li><strong>Rent receipts</strong> — monthly receipts with landlord's signature and revenue stamp (for rent > ₹5,000/month)</li>
+<li><strong>Rental agreement</strong> — registered or unregistered lease deed</li>
+<li><strong>Landlord's PAN</strong> — mandatory if annual rent exceeds ₹1,00,000</li>
+<li><strong>Bank statements</strong> — showing rent payment transfers (recommended)</li>
+</ul>
+<p>Planning your taxes? <a href="/eligibility">Check your eligibility for government schemes</a> — you might qualify for housing benefits under PM Awas Yojana too.</p>`,
+            },
+        ],
+        faqs: [
+            {
+                question: 'How is HRA exemption calculated?',
+                answer: 'HRA exemption is the minimum of: (1) Actual HRA received, (2) 50% of Basic Salary for metro cities or 40% for non-metro, (3) Rent paid minus 10% of Basic Salary. The minimum of these three is your tax-exempt HRA amount.',
+            },
+            {
+                question: 'Can I claim HRA if I live in my own house?',
+                answer: 'No, you cannot claim HRA exemption if you live in your own house in the same city. However, if you own a house in city A but rent in city B for work, you can claim HRA for the rented property and also claim home loan interest for the owned property.',
+            },
+            {
+                question: 'Is HRA available in the new tax regime?',
+                answer: 'No, HRA exemption under Section 10(13A) is not available in the new tax regime. You must choose the old tax regime to claim HRA. If your HRA savings are significant, the old regime may save you more overall.',
+            },
+            {
+                question: 'Can I claim HRA if I pay rent to my parents?',
+                answer: 'Yes, you can pay rent to your parents and claim HRA exemption. However, your parents must show this as rental income in their tax return. Keep a proper rental agreement and rent receipts.',
+            },
+            {
+                question: 'What if I pay rent but don\'t receive HRA from my employer?',
+                answer: 'If you don\'t receive HRA but pay rent, you can claim a deduction under Section 80GG — up to ₹5,000 per month or 25% of total income. This is available in both old and new regimes.',
+            },
+        ],
+    },
+
+    // ── Post 7: SIP Step-Up Calculator Guide ────────────────
+    {
+        slug: 'sip-calculator-step-up-guide-2026',
+        title: 'SIP Calculator with Step-Up 2026 — How ₹5,000/Month Can Become ₹1 Crore',
+        metaTitle: 'SIP Calculator with Step-Up 2026 — ₹5,000/Month to ₹1 Crore (Real Examples)',
+        metaDescription:
+            'Use our SIP calculator with yearly step-up to see how ₹5,000/month grows to ₹1 crore. Real examples with 10-15% annual increase. Start small, grow rich with SIP step-up.',
+        excerpt:
+            'Discover how a small ₹5,000 monthly SIP with just 10% yearly step-up can grow to over ₹1 crore. Real calculations, tables, and a free SIP calculator.',
+        publishedAt: '2026-02-23',
+        updatedAt: '2026-02-23',
+        author: 'LaabhMitra Team',
+        tags: ['SIP', 'Mutual Funds', 'Investment', 'Financial Tools'],
+        readTime: '8 min read',
+        sections: [
+            {
+                heading: 'What is a Step-Up SIP and Why Is It Powerful?',
+                content: `<p>A <strong>Step-Up SIP</strong> (also called a Top-Up SIP) is a systematic investment plan where you <strong>increase your monthly investment by a fixed percentage every year</strong>. For example, if you start with ₹5,000/month and step up by 10% annually:</p>
+<table>
+<thead><tr><th>Year</th><th>Monthly SIP</th><th>Annual Investment</th></tr></thead>
+<tbody>
+<tr><td>Year 1</td><td>₹5,000</td><td>₹60,000</td></tr>
+<tr><td>Year 2</td><td>₹5,500</td><td>₹66,000</td></tr>
+<tr><td>Year 3</td><td>₹6,050</td><td>₹72,600</td></tr>
+<tr><td>Year 5</td><td>₹7,321</td><td>₹87,846</td></tr>
+<tr><td>Year 10</td><td>₹11,790</td><td>₹1,41,477</td></tr>
+<tr><td>Year 15</td><td>₹18,987</td><td>₹2,27,839</td></tr>
+<tr><td>Year 20</td><td>₹30,580</td><td>₹3,66,960</td></tr>
+</tbody>
+</table>
+<p>The magic? Your salary typically grows 8-15% every year. By increasing your SIP at the same rate, you <strong>invest more without feeling the pinch</strong>. And the compounding effect is extraordinary.</p>
+<p>Try it yourself with our <a href="/calculators/sip">free SIP Calculator</a>.</p>`,
+            },
+            {
+                heading: 'Regular SIP vs Step-Up SIP — The ₹1 Crore Difference',
+                content: `<p>Here's the dramatic difference between a regular SIP and a step-up SIP, assuming 12% annual returns:</p>
+<table>
+<thead><tr><th>Type</th><th>Monthly Start</th><th>Step-Up</th><th>Total Invested (20 yrs)</th><th>Final Value</th></tr></thead>
+<tbody>
+<tr><td><strong>Regular SIP</strong></td><td>₹5,000</td><td>0%</td><td>₹12,00,000</td><td>₹49,96,000</td></tr>
+<tr><td><strong>Step-Up SIP (10%)</strong></td><td>₹5,000</td><td>10%/year</td><td>₹34,37,000</td><td><strong>₹1,18,72,000</strong></td></tr>
+<tr><td><strong>Step-Up SIP (15%)</strong></td><td>₹5,000</td><td>15%/year</td><td>₹56,39,000</td><td><strong>₹1,78,94,000</strong></td></tr>
+</tbody>
+</table>
+<p>With just a <strong>10% annual step-up</strong>, your ₹5,000 SIP grows from ₹50 lakh to over <strong>₹1.18 crore</strong> — more than double! And with 15% step-up, it's nearly <strong>₹1.79 crore</strong>.</p>
+<p>The extra ₹22 lakh invested (compared to regular SIP) generates an additional ₹69 lakh in returns. That's the power of stepping up early.</p>`,
+            },
+            {
+                heading: 'How Much Step-Up Should You Choose?',
+                content: `<p>Match your step-up rate to your expected salary growth:</p>
+<table>
+<thead><tr><th>Your Situation</th><th>Recommended Step-Up</th></tr></thead>
+<tbody>
+<tr><td>Government/PSU employee (steady increments)</td><td>5-8% per year</td></tr>
+<tr><td>Private sector — early career (25-35 yrs)</td><td><strong>10-15% per year</strong></td></tr>
+<tr><td>Private sector — mid career (35-45 yrs)</td><td>8-10% per year</td></tr>
+<tr><td>Business owner/freelancer (variable income)</td><td>5-10% per year</td></tr>
+</tbody>
+</table>
+<p><strong>Rule of thumb:</strong> Step up your SIP by at least your annual increment percentage minus 2-3%. If you get a 12% hike, step up SIP by 10%. You'll barely feel the difference in spending, but your wealth will multiply.</p>`,
+            },
+            {
+                heading: 'Best Funds for Step-Up SIP in 2026',
+                content: `<p>Step-Up SIP works best with <strong>equity mutual funds</strong> where long-term returns beat inflation. Here are the categories to consider:</p>
+<ul>
+<li><strong>Large Cap Index Funds:</strong> Nifty 50, Sensex — steady 12-14% CAGR over 10+ years. Best for beginners.</li>
+<li><strong>Flexi Cap Funds:</strong> Invest across large, mid, and small caps. Higher returns potential with moderate risk.</li>
+<li><strong>Mid Cap Funds:</strong> Higher volatility but potentially 15-18% returns over long periods. Suitable for aggressive investors.</li>
+<li><strong>ELSS Tax Saver:</strong> Lock-in of 3 years but saves tax under Section 80C (up to ₹1.5 lakh). Good for combining tax savings with wealth creation.</li>
+</ul>
+<p><strong>Pro tip:</strong> Start with a Nifty 50 Index Fund if you're new to SIPs. The lower expense ratio (0.1-0.2%) means more money stays invested.</p>
+<p>Already investing in FDs? <a href="/blog/fd-interest-rates-comparison-2026-sbi-hdfc-post-office">Compare FD rates</a> and see how much more a SIP could earn you over the same period.</p>`,
+            },
+            {
+                heading: 'Step-Up SIP vs Lumpsum — Which is Better?',
+                content: `<p>This is one of the most common investing questions. The answer depends on your situation:</p>
+<table>
+<thead><tr><th>Factor</th><th>Step-Up SIP</th><th>Lumpsum</th></tr></thead>
+<tbody>
+<tr><td>Risk</td><td>Lower (rupee cost averaging)</td><td>Higher (market timing risk)</td></tr>
+<tr><td>Discipline</td><td>✅ Automatic, builds habit</td><td>❌ Requires willpower</td></tr>
+<tr><td>Flexibility</td><td>✅ Start small, grow over time</td><td>❌ Need large amount upfront</td></tr>
+<tr><td>Best for</td><td>Salaried individuals</td><td>Bonus, inheritance, or windfall</td></tr>
+<tr><td>Returns (bull market)</td><td>Slightly lower</td><td>Higher if timed well</td></tr>
+<tr><td>Returns (volatile market)</td><td>Often better</td><td>Can be significantly lower</td></tr>
+</tbody>
+</table>
+<p><strong>Verdict:</strong> For most people, Step-Up SIP wins because it removes emotional decision-making, builds investing discipline, and grows with your income.</p>
+<p>Calculate your lumpsum returns with our <a href="/calculators/lumpsum">Lumpsum Calculator</a> to compare.</p>`,
+            },
+        ],
+        faqs: [
+            {
+                question: 'How much can ₹5,000 SIP grow in 20 years?',
+                answer: 'A regular ₹5,000/month SIP at 12% returns grows to about ₹50 lakh in 20 years. With a 10% annual step-up, the same starting SIP grows to over ₹1.18 crore — more than double the regular SIP.',
+            },
+            {
+                question: 'What is step-up SIP percentage?',
+                answer: 'Step-up percentage is the rate at which you increase your monthly SIP every year. For example, a 10% step-up on ₹5,000 means your SIP becomes ₹5,500 in year 2, ₹6,050 in year 3, and so on. Most investors choose 5-15% step-up.',
+            },
+            {
+                question: 'Can I do step-up SIP in any mutual fund app?',
+                answer: 'Yes, most major platforms like Groww, Zerodha Coin, Kuvera, and Paytm Money support step-up SIP. You can set the step-up percentage and frequency (usually annual) when creating your SIP.',
+            },
+            {
+                question: 'Is SIP better than FD for long-term savings?',
+                answer: 'Historically, equity SIPs have delivered 12-15% annual returns over 10+ years, while FDs offer 6-7.5%. Over 20 years, a ₹5,000 SIP grows to ₹50 lakh while the same amount in FD would be about ₹25 lakh. However, SIPs carry market risk while FDs are guaranteed.',
+            },
+            {
+                question: 'What is the minimum amount for step-up SIP?',
+                answer: 'Most mutual funds allow SIP starting from ₹500/month. You can set up a step-up from this minimum amount. Even a ₹1,000 SIP with 10% annual step-up grows significantly over 15-20 years.',
             },
         ],
     },

@@ -149,12 +149,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly' as const,
         priority: 0.7,
     }));
-    // Blog post pages
+    // Blog post pages — high priority for SEO
     const blogPages: MetadataRoute.Sitemap = getAllBlogSlugs().map((slug) => ({
         url: `${BASE_URL}/blog/${slug}`,
         lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
     }));
 
     // Hindi scheme pages
@@ -171,6 +171,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly' as const,
             priority: 0.7,
         })),
+        {
+            url: `${BASE_URL}/hi/eligibility`,
+            lastModified: now,
+            changeFrequency: 'weekly' as const,
+            priority: 0.7,
+        },
     ];
 
     return [...staticPages, ...schemePages, ...calculatorPages, ...blogPages, ...hindiPages];
