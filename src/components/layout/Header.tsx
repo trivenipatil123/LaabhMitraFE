@@ -60,8 +60,8 @@ export default function Header() {
                             <button
                                 onClick={() => setToolsOpen(!toolsOpen)}
                                 className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${toolsOpen
-                                        ? 'text-[var(--color-primary)] bg-[var(--color-primary)]/5'
-                                        : 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/5'
+                                    ? 'text-[var(--color-primary)] bg-[var(--color-primary)]/5'
+                                    : 'text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/5'
                                     }`}
                             >
                                 <span className="text-base">🛠️</span>
@@ -123,6 +123,14 @@ export default function Header() {
                 {/* Mobile menu */}
                 {mobileOpen && (
                     <nav className="md:hidden pb-4 fade-in">
+                        <Link
+                            href="/"
+                            onClick={() => setMobileOpen(false)}
+                            className="flex items-center gap-3 px-4 py-3 rounded-lg text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:bg-[var(--color-primary)]/5 transition"
+                        >
+                            <span className="text-lg">🏠</span>
+                            <span className="font-medium">Home</span>
+                        </Link>
                         {navLinks.map((link) => (
                             <Link
                                 key={link.href}
