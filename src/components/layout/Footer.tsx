@@ -53,6 +53,7 @@ export default function Footer() {
                             <li><Link href="/about" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition">About Us</Link></li>
                             <li><Link href="/contact" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition">Contact</Link></li>
                             <li><Link href="/privacy-policy" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition">Privacy Policy</Link></li>
+                            <li><Link href="/terms-of-service" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition">Terms of Service</Link></li>
                             <li><Link href="/disclaimer" className="text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] transition">Disclaimer</Link></li>
                         </ul>
                     </div>
