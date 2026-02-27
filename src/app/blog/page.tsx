@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BLOG_POSTS } from '@/lib/blog-data';
+import { getPublishedBlogPosts } from '@/lib/blog-data';
 
 export default function BlogPage() {
     return (
@@ -12,7 +12,7 @@ export default function BlogPage() {
             </div>
 
             <div className="space-y-4">
-                {BLOG_POSTS.map((post) => {
+                {getPublishedBlogPosts().map((post) => {
                     const formattedDate = new Date(post.publishedAt).toLocaleDateString('en-IN', {
                         day: 'numeric',
                         month: 'short',

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { BLOG_POSTS, getBlogPost, getAllBlogSlugs } from '@/lib/blog-data';
+import { getPublishedBlogPosts, getBlogPost, getAllBlogSlugs } from '@/lib/blog-data';
 import { ArticleJsonLd } from '@/components/ArticleJsonLd';
 
 // Pre-generate all blog slugs at build time
@@ -152,7 +152,7 @@ export default async function BlogPostPage({
                 <div className="border-t border-[var(--color-border)] pt-8">
                     <h2 className="text-lg font-semibold mb-4">📚 More Articles</h2>
                     <div className="grid sm:grid-cols-2 gap-4">
-                        {BLOG_POSTS.filter((p) => p.slug !== post.slug)
+                        {getPublishedBlogPosts().filter((p) => p.slug !== post.slug)
                             .slice(0, 2)
                             .map((related) => (
                                 <Link
