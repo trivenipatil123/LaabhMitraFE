@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { getPublishedBlogPosts } from '@/lib/blog-data';
 
+// Revalidate every hour so new posts appear on their publishedAt date
+export const revalidate = 3600;
+
 export default function BlogPage() {
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">

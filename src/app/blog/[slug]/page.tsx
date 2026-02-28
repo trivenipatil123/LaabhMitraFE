@@ -4,6 +4,9 @@ import { notFound } from 'next/navigation';
 import { getPublishedBlogPosts, getBlogPost, getAllBlogSlugs } from '@/lib/blog-data';
 import { ArticleJsonLd } from '@/components/ArticleJsonLd';
 
+// Revalidate every hour so date-filtered posts update correctly
+export const revalidate = 3600;
+
 // Pre-generate all blog slugs at build time
 export function generateStaticParams() {
     return getAllBlogSlugs().map((slug) => ({ slug }));

@@ -1973,19 +1973,22 @@ export const BLOG_POSTS: BlogPost[] = [
     },
 ];
 
+function getTodayIST(): string {
+    return new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' }); // YYYY-MM-DD
+}
+
 export function getPublishedBlogPosts(): BlogPost[] {
-    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    const today = getTodayIST();
     return BLOG_POSTS.filter((post) => post.publishedAt <= today);
 }
 
 export function getBlogPost(slug: string): BlogPost | undefined {
-    const today = new Date().toISOString().split('T')[0];
+    const today = getTodayIST();
     const post = BLOG_POSTS.find((post) => post.slug === slug);
     if (post && post.publishedAt > today) return undefined; // not published yet
     return post;
 }
 
 export function getAllBlogSlugs(): string[] {
-    const today = new Date().toISOString().split('T')[0];
-    return BLOG_POSTS.filter((post) => post.publishedAt <= today).map((post) => post.slug);
+    return BLOG_POSTS.map((post) => post.slug); // generate all slugs at build time
 }
